@@ -4,6 +4,8 @@ import java.io.Serializable;
 
 import com.mindefdb.dominio.model.ancestor.Address;
 import com.mindefdb.dominio.model.ancestor.FlagEstado;
+import com.mindefdb.dominio.model.ancestor.NombreCompleto;
+import com.mindefdb.dominio.model.auditable.DataAuditable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -23,7 +25,7 @@ import lombok.Data;
 	uniqueConstraints = {
         @UniqueConstraint(name = "PK_T_M_JEFE", columnNames = "id_jefe")
 	})
-public class Jefe implements Serializable{
+public class Jefe extends DataAuditable implements Serializable{
 	/**
 	 * 
 	 */
@@ -34,14 +36,8 @@ public class Jefe implements Serializable{
 	@Column(name ="id_jefe", columnDefinition = "NUMERIC(8,0)")
 	private Long idJefe;
 	
-	@Column(name ="nombre", length = 150, nullable = false )
-	private String nombre;
-	
-	@Column(name ="apellido_paterno", length = 150, nullable = false)
-	private String apellidoPaterno;
-	
-	@Column(name ="apellido_materno", length = 150, nullable = false)
-	private String apellidoMaterno;
+	@Embedded
+    private NombreCompleto nombreCompleto;
 	
 	@Column(name ="correo", length = 100, nullable = false)
 	private String correo;

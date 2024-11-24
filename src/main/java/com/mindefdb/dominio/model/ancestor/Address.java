@@ -8,7 +8,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Embeddable
-public abstract class Address {
+public class Address {
 	
 	@Column(name = "tipo_zona", length = 20, nullable= false)
 	private String tipoZona;

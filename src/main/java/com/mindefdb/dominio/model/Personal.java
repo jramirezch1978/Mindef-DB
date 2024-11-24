@@ -3,6 +3,7 @@ package com.mindefdb.dominio.model;
 import java.io.Serializable;
 
 import com.mindefdb.dominio.model.ancestor.FlagEstado;
+import com.mindefdb.dominio.model.ancestor.NombreCompleto;
 import com.mindefdb.dominio.model.auditable.DataAuditable;
 
 import jakarta.persistence.Column;
@@ -17,29 +18,24 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "t_m_unidad",
+@Table(name = "t_m_personal",
 	uniqueConstraints = {
-        @UniqueConstraint(name = "PK_T_M_UNIDAD", columnNames = "id_cod_unidad")
+        @UniqueConstraint(name = "PK_T_M_PERSONAL", columnNames = "id_personal")
 	})
-public class Unidad extends DataAuditable implements Serializable{
-	
+public class Personal extends DataAuditable implements Serializable {
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = -3540598256864918973L;
+	private static final long serialVersionUID = -4586574306477737124L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name ="id_cod_unidad", columnDefinition = "NUMERIC(8,0)")
-	private Long idCodUnidad;
+	@Column(name ="id_personal", columnDefinition = "NUMERIC(8,0)")
+	private Long idPersonal;
 	
-	@Column(name ="nombre", length = 150, nullable = false)
-	private String nombre;
-	
-	@Column(name ="sigla", length = 20, nullable = false)
-	private String sigla;
+	@Embedded
+    private NombreCompleto nombreCompleto;
 	
 	@Embedded
     private FlagEstado flagEstado;
-
 }

@@ -5,6 +5,8 @@ import java.util.Date;
 
 import com.mindefdb.dominio.model.ancestor.Address;
 import com.mindefdb.dominio.model.ancestor.FlagEstado;
+import com.mindefdb.dominio.model.ancestor.NombreCompleto;
+import com.mindefdb.dominio.model.auditable.DataAuditable;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -26,7 +28,7 @@ import lombok.Data;
         @UniqueConstraint(name = "UK_T_T_CHOFER_DNI", columnNames = "dni"),
         @UniqueConstraint(name = "UK_T_T_CHOFER_NRO_LICENCIA", columnNames = "nro_licencia"),
 	})
-public class Chofer implements Serializable{
+public class Chofer extends DataAuditable implements Serializable{
 	/**
 	 * 
 	 */
@@ -37,14 +39,8 @@ public class Chofer implements Serializable{
 	@Column(name ="id_chofer", columnDefinition = "NUMERIC(8,0)")
 	private Long idChofer;
 	
-	@Column(name ="nombre", length = 150, nullable = false)
-	private String nombre;
-	
-	@Column(name ="apellido_paterno", length = 100, nullable = false)
-	private String apellidoPaterno;
-	
-	@Column(name ="apellido_materno", length = 100, nullable = false)
-	private String apellidoMaterno;
+	@Embedded
+    private NombreCompleto nombreCompleto;
 	
 	@Column(name ="celular", length = 9, nullable = false)
 	private String celular;

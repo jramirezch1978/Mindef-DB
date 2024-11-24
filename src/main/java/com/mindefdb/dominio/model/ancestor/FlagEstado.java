@@ -9,6 +9,6 @@ import lombok.Setter;
 @Setter
 @Embeddable
 public class FlagEstado {
-	@Column(name ="flag_estado", length = 1, nullable = false, columnDefinition = "bpchar(1) DEFAULT 'A'")
+	@Column(name ="flag_estado", length = 1, nullable = false, columnDefinition = "bpchar(1) DEFAULT '1'")
 	private String flagEstado;
 }
