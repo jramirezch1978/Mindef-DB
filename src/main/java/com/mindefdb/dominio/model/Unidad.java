@@ -11,6 +11,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import jakarta.persistence.UniqueConstraint;
 import lombok.Data;
@@ -19,7 +20,8 @@ import lombok.Data;
 @Entity
 @Table(name = "t_m_unidad",
 	uniqueConstraints = {
-        @UniqueConstraint(name = "PK_T_M_UNIDAD", columnNames = "id_cod_unidad")
+        @UniqueConstraint(name = "PK_T_M_UNIDAD", columnNames = "id_cod_unidad"),
+        @UniqueConstraint(name = "UK_T_M_UNIDAD_NOMBRE", columnNames = "nombre")
 	})
 public class Unidad extends DataAuditable implements Serializable{
 	
@@ -29,7 +31,12 @@ public class Unidad extends DataAuditable implements Serializable{
 	private static final long serialVersionUID = -3540598256864918973L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_t_m_unidad")
+    @SequenceGenerator(
+        name = "seq_t_m_unidad",
+        sequenceName = "seq_t_m_unidad",
+        allocationSize = 1
+    )
 	@Column(name ="id_cod_unidad", columnDefinition = "NUMERIC(8,0)")
 	private Long idCodUnidad;
 	
@@ -41,5 +48,13 @@ public class Unidad extends DataAuditable implements Serializable{
 	
 	@Embedded
     private FlagEstado flagEstado;
+	
+	public void setFlagEstado(String value) {
+		if (this.flagEstado == null) {
+			this.flagEstado = new FlagEstado();
+		}
+		
+		this.flagEstado.setFlagEstado(value);
+	}
 
 }

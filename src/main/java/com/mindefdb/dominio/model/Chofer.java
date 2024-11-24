@@ -51,7 +51,7 @@ public class Chofer extends DataAuditable implements Serializable{
 	@Column(name ="dni", length = 8, nullable = false)
 	private String dni;
 	
-	@Column(name ="fecha_vigente", columnDefinition = "DATE DEFAULT CURRENT_DATE")
+	@Column(name ="fecha_vigente", columnDefinition = "DATE") //columnDefinition = "TIMESTAMP DEFAULT CURRENT_DATE")
 	private Date fechaVigente;
 	
 	@Column(name ="observaciones", length = 3000)
