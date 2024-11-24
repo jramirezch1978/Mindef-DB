@@ -27,22 +27,22 @@ public class Chofer implements Serializable{
 	@Column(name ="id_chofer")
 	private Long idChofer;
 	
-	@Column(name ="nombre", length = 100, nullable = false)
+	@Column(name ="nombre")
 	private String nombre;
 	
-	@Column(name ="apellido_paterno", length = 100, nullable = false)
+	@Column(name ="apellido_paterno")
 	private String apellidoPaterno;
 	
-	@Column(name ="apellido_materno", length = 100, nullable = false)
+	@Column(name ="apellido_materno")
 	private String apellidoMaterno;
 	
-	@Column(name ="celular", length = 20, nullable = false)
+	@Column(name ="celular")
 	private String celular;
 	
-	@Column(name ="nro_licencia", length = 9, nullable = false)
+	@Column(name ="nro_licencia")
 	private String nroLicencia;
 	
-	@Column(name ="dni", length = 8, nullable = false, unique = true)
+	@Column(name ="dni")
 	private String dni;
 	
 	@Column(name ="fecha_vigente")
@@ -52,7 +52,7 @@ public class Chofer implements Serializable{
 	private String observaciones;
 
 	
-	@Column(name ="estado", length = 1, nullable = false, columnDefinition = "VARCHAR(1) DEFAULT 'A'")  // para definir un valor po
+	@Column(name ="estado")
 	private String estado;
 	
 	@ManyToOne
