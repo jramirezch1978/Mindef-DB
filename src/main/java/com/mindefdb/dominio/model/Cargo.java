@@ -16,29 +16,24 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "t_m_unidad",
+@Table(name = "t_m_cargo",
 	uniqueConstraints = {
-        @UniqueConstraint(name = "PK_T_M_UNIDAD", columnNames = "id_cod_unidad")
+        @UniqueConstraint(name = "PK_T_M_CARGO", columnNames = "id_cargo")
 	})
-public class Unidad implements Serializable{
-	
-	/**
+public class Cargo implements Serializable{/**
 	 * 
 	 */
-	private static final long serialVersionUID = -3540598256864918973L;
+	private static final long serialVersionUID = 3214079781831171875L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name ="id_cod_unidad", columnDefinition = "NUMERIC(8,0)")
-	private Long idCodUnidad;
+	@Column(name ="id_cargo", columnDefinition = "NUMERIC(8,0)")
+	private Long idCargo;
 	
-	@Column(name ="nombre", length = 150, nullable = false)
-	private String nombre;
-	
-	@Column(name ="sigla", length = 20, nullable = false)
-	private String sigla;
+	@Column(name ="nombre_cargo", length = 150, nullable = false)
+	private String nombreCargo;
 	
 	@Embedded
     private FlagEstado flagEstado;
-
+	
 }
