@@ -26,10 +26,10 @@ public class Jefe implements Serializable{
 	@Column(name ="id_jefe")
 	private Long idJefe;
 	
-	@Column(name ="nombre" , length = 100, nullable = false)
+	@Column(name ="nombre" )
 	private String nombre;
 	
-	@Column(name ="apellido_paterno", length = 100, nullable = false)
+	@Column(name ="apellido_paterno")
 	private String apellidoPaterno;
 	
 	@Column(name ="apellido_materno")
