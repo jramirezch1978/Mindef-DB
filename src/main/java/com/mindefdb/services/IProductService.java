@@ -1,7 +1,7 @@
 package com.mindefdb.services;
 
-import java.util.Collection;
 import java.util.List;
+import java.util.Optional;
 
 import com.mindefdb.dtos.ProductDTO;
 import com.mindefdb.dtos.ProductDTOV1;
@@ -22,6 +22,6 @@ public interface IProductService {
 
 	void delete(Long id);
 
-	List<Object> findBySku(String sku);
+	Optional<ProductDTO> findBySku(String sku);
 
 }

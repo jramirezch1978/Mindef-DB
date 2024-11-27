@@ -19,6 +19,8 @@ import com.mindefdb.services.IProductService;
 import jakarta.validation.Valid;
 
 import com.mindefdb.dtos.ProductDTO;
+import com.mindefdb.handler.MethodArgumentNotValidException;
+import com.mindefdb.handler.ResourceNotFoundException;
 
 @RestController
 @RequestMapping("/api/products")
@@ -30,7 +32,14 @@ public class ProductController {
     // 200 OK: Respuesta exitosa
     @GetMapping("/{id}")
     public ResponseEntity<ProductDTO> getProduct(@PathVariable Long id) {
-        return ResponseEntity.ok(productService.findById(id));
+        try {
+			return ResponseEntity.ok(productService.findById(id));
+		} catch (MethodArgumentNotValidException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+        
     }
 
     // 201 CREATED: Recurso creado exitosamente
@@ -54,7 +63,9 @@ public class ProductController {
 
     // 404 NOT FOUND: Recurso no encontrado
     @GetMapping("/find/{sku}")
-    public ResponseEntity<List<Object>> findBySku(@PathVariable String sku) {
-    	return null;
+    public ResponseEntity<ProductDTO> findBySku(@PathVariable String sku) throws ResourceNotFoundException {
+        return productService.findBySku(sku)  // Asumiendo que esto retorna Optional<ProductDTO>
+            .map(ResponseEntity::ok)
+            .orElseThrow(() -> new ResourceNotFoundException("Product not found with SKU: " + sku));
     }
 }

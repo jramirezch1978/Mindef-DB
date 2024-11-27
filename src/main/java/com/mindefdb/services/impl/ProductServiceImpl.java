@@ -1,6 +1,7 @@
 package com.mindefdb.services.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -49,7 +50,7 @@ public class ProductServiceImpl implements IProductService {
 	}
 
 	@Override
-	public List<Object> findBySku(String sku) {
+	public Optional<ProductDTO> findBySku(String sku){
 		// TODO Auto-generated method stub
 		return null;
 	}
