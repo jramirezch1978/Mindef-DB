@@ -21,7 +21,6 @@ public class ProductController {
 	private IProductService productService;
     
 	//curl http://localhost:8080/api/products?version=1
-	
     @GetMapping(params = "version=1")
     public List<ProductDTOV1> getProductsV1() {
         return productService.getAllProductsV1();

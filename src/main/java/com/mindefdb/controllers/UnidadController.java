@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.mindefdb.dtos.UnidadDTO;
 import com.mindefdb.services.IUnidadService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("api/unidad")
 public class UnidadController {
@@ -29,7 +31,7 @@ public class UnidadController {
 	private Logger log = LoggerFactory.getLogger(UnidadController.class.getName());
 	
 	@PostMapping("/insertar")
-	public ResponseEntity<?> insertar(@RequestBody UnidadDTO unidadDTO){
+	public ResponseEntity<?> insertar(@Valid @RequestBody UnidadDTO unidadDTO){
 		log.debug("UnidadController.insertar() ==================> INICIO <==================");
 		try {
 			
