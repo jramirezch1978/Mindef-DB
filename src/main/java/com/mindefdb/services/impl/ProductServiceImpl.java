@@ -5,8 +5,13 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.mindefdb.services.IProductService;
+
+import jakarta.validation.Valid;
+
+import com.mindefdb.dtos.ProductDTO;
 import com.mindefdb.dtos.ProductDTOV1;
 import com.mindefdb.dtos.ProductDTOV2;
+import com.mindefdb.handler.MethodArgumentNotValidException;
 
 @Service
 public class ProductServiceImpl implements IProductService {
@@ -23,4 +28,31 @@ public class ProductServiceImpl implements IProductService {
 		return null;
 	}
 
+	@Override
+	public ProductDTO findById(Long id) throws MethodArgumentNotValidException {
+		if (id == null) {
+			throw new MethodArgumentNotValidException("El ID no debe ser nulo, debe tener un valor, por favor verifique!");
+		}
+		return null;
+	}
+
+	@Override
+	public ProductDTO create(@Valid ProductDTO product) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void delete(Long id) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public List<Object> findBySku(String sku) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
+
