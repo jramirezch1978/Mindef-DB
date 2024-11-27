@@ -33,4 +33,6 @@ public abstract class DataAuditable {
 	@LastModifiedDate
 	@Column(name = "fecha_modificacion")
 	private LocalDateTime fechaModificacion;
+	
+	
 }
