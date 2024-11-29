@@ -35,4 +35,9 @@ public class UserDTO {
             groups = {OnCreate.class, OnUpdate.class},
             message = "Formato de teléfono inválido")
     private String phone;
+    
+    @NotNull
+    @Size(min = 1, max = 1)
+    @NotBlank
+    private String estado;
 }
