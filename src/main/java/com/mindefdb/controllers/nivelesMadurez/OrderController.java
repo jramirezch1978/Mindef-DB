@@ -21,8 +21,8 @@ import com.mindefdb.services.IUserService;
 @RequestMapping("/api/orders")
 public class OrderController {
 	
-	@Autowired
-	private IOrderService orderService;
+	//@Autowired
+	//private IOrderService orderService;
 
 	@GetMapping("/{userId}/orders")
     public CollectionModel<EntityModel<OrderDTO>> getUserOrders(@PathVariable Long userId) {

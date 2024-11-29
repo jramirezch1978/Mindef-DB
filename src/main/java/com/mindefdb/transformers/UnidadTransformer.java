@@ -27,7 +27,7 @@ public class UnidadTransformer {
 		
 		unidadDto.setNombre(unidad.getNombre());
 		unidadDto.setSigla(unidad.getSigla());
-		unidadDto.setFlagEstado("1");
+		unidadDto.setFlagEstado(unidad.getFlagEstado().getFlagEstado());
 		unidadDto.setIdCodUnidad(unidad.getIdCodUnidad());
 		
 		

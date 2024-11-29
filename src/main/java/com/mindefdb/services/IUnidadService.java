@@ -12,5 +12,6 @@ public interface IUnidadService {
 	public List<UnidadDTO> getAll();
 	
 	public void eliminar(Long idCodUnidad);
+	public UnidadDTO getById(Long idCodUnidad) throws Exception;
 
 }

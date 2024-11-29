@@ -20,7 +20,7 @@ import com.mindefdb.dtos.UserDTO;
 import com.mindefdb.services.IUserService;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/usersL3")
 public class Level3Controller {
 	
 	@Autowired
@@ -57,13 +57,13 @@ public class Level3Controller {
         );
     }
     
-    @PutMapping("/activar/{id}")
+    @PutMapping("/activate/{id}")
     private ResponseEntity<Object> activateUser(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
     
-    @PutMapping("/desactivar/{id}")
+    @PutMapping("/deactivate/{id}")
 	private ResponseEntity<Object> deactivateUser(Long id) {
 		// TODO Auto-generated method stub
 		return null;

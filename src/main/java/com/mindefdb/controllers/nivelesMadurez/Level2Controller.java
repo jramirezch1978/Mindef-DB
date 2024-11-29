@@ -23,7 +23,7 @@ import com.mindefdb.services.IUserService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/users")
+@RequestMapping("/api/usersL2")
 public class Level2Controller {
 	
 	@Autowired

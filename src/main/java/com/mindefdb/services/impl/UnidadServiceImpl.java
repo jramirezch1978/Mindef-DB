@@ -2,6 +2,7 @@ package com.mindefdb.services.impl;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -62,6 +63,18 @@ public class UnidadServiceImpl implements IUnidadService{
 		
 		unidadRepository.deleteById(idCodUnidad);
 		
+	}
+
+	@Override
+	public UnidadDTO getById(Long idCodUnidad) throws Exception {
+		Optional<Unidad> optUnidad = unidadRepository.findById(idCodUnidad);
+		
+		if (optUnidad.isEmpty())
+			throw new Exception ("No existe la unidad con codigo " + idCodUnidad.toString());
+		
+		UnidadDTO unidadDto = UnidadTransformer.parserModelToDto(optUnidad.get());
+		
+		return unidadDto;
 	}
 
 }

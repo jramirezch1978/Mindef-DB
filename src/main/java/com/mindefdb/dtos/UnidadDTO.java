@@ -18,7 +18,7 @@ public class UnidadDTO {
 	private String sigla;
 	
 	@NotNull
-	@Size(min = 1, max = 150, message = "Nombre debe tener entre 2 y 50 caracteres")
+	@Size(min = 1, max = 1, message = "El Flag de estado solo debe ser de 1 caracter")
     private String flagEstado;
     
 	private String creadoPor;
