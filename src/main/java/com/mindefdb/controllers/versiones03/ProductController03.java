@@ -13,8 +13,8 @@ import com.mindefdb.dtos.ProductDTOV1;
 import com.mindefdb.dtos.ProductDTOV2;
 
 @RestController
-@RequestMapping("/api/products")
-public class ProductController {
+@RequestMapping("/api/products_03")
+public class ProductController03 {
     
 	@Autowired
 	private IProductService productService;

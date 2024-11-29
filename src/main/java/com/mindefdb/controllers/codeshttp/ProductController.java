@@ -1,7 +1,6 @@
 package com.mindefdb.controllers.codeshttp;
 
 import java.net.URI;
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -23,7 +22,7 @@ import com.mindefdb.handler.MethodArgumentNotValidException;
 import com.mindefdb.handler.ResourceNotFoundException;
 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api/productsCodes")
 public class ProductController {
 
     @Autowired

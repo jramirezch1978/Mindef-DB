@@ -14,8 +14,8 @@ import com.mindefdb.dtos.ProductDTOV2;
 
 
 @RestController
-@RequestMapping("/api/products")
-public class ProductController {
+@RequestMapping("/api/products_05")
+public class ProductController04 {
 	
 	@Autowired
 	private IProductService productService;
