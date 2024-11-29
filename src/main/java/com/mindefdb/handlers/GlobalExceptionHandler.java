@@ -1,4 +1,4 @@
-package com.mindefdb.handler;
+package com.mindefdb.handlers;
 
 
 import org.springframework.http.HttpStatus;

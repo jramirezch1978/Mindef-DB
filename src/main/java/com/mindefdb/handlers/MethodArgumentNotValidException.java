@@ -1,4 +1,4 @@
-package com.mindefdb.handler;
+package com.mindefdb.handlers;
 
 
 public class MethodArgumentNotValidException extends Exception{

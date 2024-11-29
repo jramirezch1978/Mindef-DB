@@ -18,8 +18,8 @@ import com.mindefdb.services.IProductService;
 import jakarta.validation.Valid;
 
 import com.mindefdb.dtos.ProductDTO;
-import com.mindefdb.handler.MethodArgumentNotValidException;
-import com.mindefdb.handler.ResourceNotFoundException;
+import com.mindefdb.handlers.MethodArgumentNotValidException;
+import com.mindefdb.handlers.ResourceNotFoundException;
 
 @RestController
 @RequestMapping("/api/productsCodes")

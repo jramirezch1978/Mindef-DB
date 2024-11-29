@@ -1,4 +1,4 @@
-package com.mindefdb.handler;
+package com.mindefdb.handlers;
 
 public class ResourceNotFoundException extends Exception {
 
