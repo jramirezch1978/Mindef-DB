@@ -1,15 +1,20 @@
 package com.mindefdb.transformers;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.mindefdb.dominio.ancestors.IModelEntity;
-import com.mindefdb.dominio.model.Unidad;
-import com.mindefdb.dtos.UnidadDTO;
 import com.mindefdb.dtos.ancestors.AncestorDTO;
 
 public interface ITransformer {
 	public IModelEntity parserDtoToModel(AncestorDTO dto);
 	public AncestorDTO parserModelToDto(IModelEntity model);
-	public List<AncestorDTO> parserModelToDTO(List<IModelEntity> lista);
+	
+	// Método default que todas las implementaciones heredarán
+    default List<AncestorDTO> parserModelToDTO(List<IModelEntity> lista) {
+        return lista.stream()
+                   .map(model -> parserModelToDto(model))
+                   .collect(Collectors.toList());
+    }
 	
 }

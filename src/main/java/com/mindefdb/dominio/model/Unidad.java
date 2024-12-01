@@ -52,7 +52,7 @@ public class Unidad extends DataAuditable implements Serializable, IModelEntity{
 	
 	public void setFlagEstado(String value) {
 		if (this.flagEstado == null) {
-			this.flagEstado = new FlagEstado();
+			this.flagEstado = FlagEstado.builder().flagEstado(value).build();
 		}
 		
 		this.flagEstado.setFlagEstado(value);

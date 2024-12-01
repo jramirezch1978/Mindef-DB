@@ -2,12 +2,14 @@ package com.mindefdb.dominio.embedables;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Embeddable
+@Builder
 public class NombreCompleto {
 	@Column(name ="primer_nombre", length = 150, nullable = false )
 	private String primerNombre;

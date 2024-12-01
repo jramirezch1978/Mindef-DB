@@ -1,9 +1,5 @@
 package com.mindefdb.transformers.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
-
 import com.mindefdb.dominio.ancestors.IModelEntity;
 import com.mindefdb.dominio.model.Unidad;
 import com.mindefdb.dtos.UnidadDTO;
@@ -14,15 +10,6 @@ import lombok.Builder;
 
 @Builder
 public class UnidadTransformer implements ITransformer{
-
-	@Override
-	public List<AncestorDTO> parserModelToDTO(List<IModelEntity> lista) {
-		return lista.stream()
-	               .map(model -> (AncestorDTO)UnidadTransformer.builder()
-	                                                          .build()
-	                                                          .parserModelToDto(model))
-	               .collect(Collectors.toList());
-	}
 
 	@Override
 	public IModelEntity parserDtoToModel(AncestorDTO dto) {
