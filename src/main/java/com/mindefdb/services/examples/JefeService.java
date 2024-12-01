@@ -1,4 +1,4 @@
-package com.mindefdb.services.impl;
+package com.mindefdb.services.examples;
 
 import java.time.LocalDateTime;
 import java.util.List;

@@ -52,7 +52,7 @@ public class UnidadServiceImpl implements IUnidadService{
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<UnidadDTO> getAll() {
-		List<Unidad> lista = unidadRepository.findAll();
+		List<Unidad> lista = unidadRepository.findAllByOrderByIdCodUnidadAsc();
 		
 		List<UnidadDTO> listaRetorno = UnidadTransformer.builder().build().parserModelToDTO(lista);
 		
