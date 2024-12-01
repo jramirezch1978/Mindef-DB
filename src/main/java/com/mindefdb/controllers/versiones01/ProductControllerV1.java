@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mindefdb.dtos.ProductDTOV1;
+import com.mindefdb.dtos.examples.ProductDTOV1;
 import com.mindefdb.services.IProductService;
 
 @RestController

@@ -9,9 +9,9 @@ import com.mindefdb.services.IProductService;
 
 import jakarta.validation.Valid;
 
-import com.mindefdb.dtos.ProductDTO;
-import com.mindefdb.dtos.ProductDTOV1;
-import com.mindefdb.dtos.ProductDTOV2;
+import com.mindefdb.dtos.examples.ProductDTO;
+import com.mindefdb.dtos.examples.ProductDTOV1;
+import com.mindefdb.dtos.examples.ProductDTOV2;
 import com.mindefdb.handlers.MethodArgumentNotValidException;
 
 @Service

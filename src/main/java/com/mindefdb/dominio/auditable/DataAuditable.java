@@ -1,4 +1,4 @@
-package com.mindefdb.dominio.model.auditable;
+package com.mindefdb.dominio.auditable;
 
 import java.time.LocalDateTime;
 

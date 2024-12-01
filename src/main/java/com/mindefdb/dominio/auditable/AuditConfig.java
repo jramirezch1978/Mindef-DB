@@ -1,4 +1,4 @@
-package com.mindefdb.dominio.model.auditable;
+package com.mindefdb.dominio.auditable;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

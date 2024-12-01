@@ -2,8 +2,9 @@ package com.mindefdb.dominio.model;
 
 import java.io.Serializable;
 
-import com.mindefdb.dominio.model.ancestor.FlagEstado;
-import com.mindefdb.dominio.model.auditable.DataAuditable;
+import com.mindefdb.dominio.ancestors.IModelEntity;
+import com.mindefdb.dominio.auditable.DataAuditable;
+import com.mindefdb.dominio.embedables.FlagEstado;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -23,7 +24,7 @@ import lombok.Data;
         @UniqueConstraint(name = "PK_T_M_UNIDAD", columnNames = "id_cod_unidad"),
         @UniqueConstraint(name = "UK_T_M_UNIDAD_NOMBRE", columnNames = "nombre")
 	})
-public class Unidad extends DataAuditable implements Serializable{
+public class Unidad extends DataAuditable implements Serializable, IModelEntity{
 	
 	/**
 	 * 

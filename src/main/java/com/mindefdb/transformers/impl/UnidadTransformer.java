@@ -1,15 +1,34 @@
-package com.mindefdb.transformers;
+package com.mindefdb.transformers.impl;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
+import com.mindefdb.dominio.ancestors.IModelEntity;
 import com.mindefdb.dominio.model.Unidad;
 import com.mindefdb.dtos.UnidadDTO;
+import com.mindefdb.dtos.ancestors.AncestorDTO;
+import com.mindefdb.transformers.ITransformer;
 
-public class UnidadTransformer {
+import lombok.Builder;
 
-	public static Unidad parserDtoToModel(UnidadDTO unidadDto) {
+@Builder
+public class UnidadTransformer implements ITransformer{
+
+	@Override
+	public List<AncestorDTO> parserModelToDTO(List<IModelEntity> lista) {
+		return lista.stream()
+	               .map(model -> (AncestorDTO)UnidadTransformer.builder()
+	                                                          .build()
+	                                                          .parserModelToDto(model))
+	               .collect(Collectors.toList());
+	}
+
+	@Override
+	public IModelEntity parserDtoToModel(AncestorDTO dto) {
+		
 		Unidad unidad = new Unidad();
+		UnidadDTO unidadDto = (UnidadDTO) dto;
 		
 		if(unidadDto.getIdCodUnidad() != null) {
 			unidad.setIdCodUnidad(unidadDto.getIdCodUnidad());
@@ -22,8 +41,10 @@ public class UnidadTransformer {
 		return unidad;
 	}
 
-	public static UnidadDTO parserModelToDto(Unidad unidad) {
+	@Override
+	public AncestorDTO parserModelToDto(IModelEntity model) {
 		UnidadDTO unidadDto = new UnidadDTO();
+		Unidad unidad = (Unidad) model;
 		
 		unidadDto.setNombre(unidad.getNombre());
 		unidadDto.setSigla(unidad.getSigla());
@@ -37,16 +58,6 @@ public class UnidadTransformer {
 		unidadDto.setFechaModificacion(unidad.getFechaModificacion());
 		
 		return unidadDto;
-	}
-
-	public static List<UnidadDTO> parserModelToDTO(List<Unidad> lista) {
-		List<UnidadDTO>listaRetorno = new ArrayList<>();
-		
-		for(Unidad unidad : lista) {
-			listaRetorno.add(UnidadTransformer.parserModelToDto(unidad));
-		}
-		
-		return listaRetorno;
 	}
 
 }

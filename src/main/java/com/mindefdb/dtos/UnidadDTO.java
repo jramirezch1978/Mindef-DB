@@ -3,12 +3,14 @@ package com.mindefdb.dtos;
 
 import java.time.LocalDateTime;
 
+import com.mindefdb.dtos.ancestors.AncestorDTO;
+
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-public class UnidadDTO {
+public class UnidadDTO extends AncestorDTO{
 	private Long idCodUnidad;
 	
 	@Size(min = 5, max = 150, message = "Nombre debe tener entre 2 y 50 caracteres")

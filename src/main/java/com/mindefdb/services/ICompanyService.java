@@ -2,9 +2,9 @@ package com.mindefdb.services;
 
 import java.util.List;
 
-import com.mindefdb.dtos.CompanyDTO;
-import com.mindefdb.dtos.DepartmentDTO;
-import com.mindefdb.dtos.EmployeeDTO;
+import com.mindefdb.dtos.examples.CompanyDTO;
+import com.mindefdb.dtos.examples.DepartmentDTO;
+import com.mindefdb.dtos.examples.EmployeeDTO;
 
 import jakarta.validation.Valid;
 

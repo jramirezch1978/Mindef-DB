@@ -1,4 +1,4 @@
-package com.mindefdb.dominio.model.ancestor;
+package com.mindefdb.dominio.embedables;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;

@@ -17,7 +17,7 @@ import com.mindefdb.services.IProductService;
 
 import jakarta.validation.Valid;
 
-import com.mindefdb.dtos.ProductDTO;
+import com.mindefdb.dtos.examples.ProductDTO;
 import com.mindefdb.handlers.MethodArgumentNotValidException;
 import com.mindefdb.handlers.ResourceNotFoundException;
 

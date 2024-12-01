@@ -11,7 +11,7 @@ import com.mindefdb.dominio.model.Unidad;
 import com.mindefdb.dtos.UnidadDTO;
 import com.mindefdb.repository.IUnidadRepository;
 import com.mindefdb.services.IUnidadService;
-import com.mindefdb.transformers.UnidadTransformer;
+import com.mindefdb.transformers.impl.UnidadTransformer;
 
 @Service
 public class UnidadServiceImpl implements IUnidadService{

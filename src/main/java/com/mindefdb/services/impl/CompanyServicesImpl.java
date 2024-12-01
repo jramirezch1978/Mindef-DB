@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.mindefdb.dtos.CompanyDTO;
-import com.mindefdb.dtos.DepartmentDTO;
-import com.mindefdb.dtos.EmployeeDTO;
+import com.mindefdb.dtos.examples.CompanyDTO;
+import com.mindefdb.dtos.examples.DepartmentDTO;
+import com.mindefdb.dtos.examples.EmployeeDTO;
 import com.mindefdb.services.ICompanyService;
 
 import jakarta.validation.Valid;

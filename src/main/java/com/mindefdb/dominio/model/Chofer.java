@@ -3,10 +3,11 @@ package com.mindefdb.dominio.model;
 import java.io.Serializable;
 import java.util.Date;
 
-import com.mindefdb.dominio.model.ancestor.Address;
-import com.mindefdb.dominio.model.ancestor.FlagEstado;
-import com.mindefdb.dominio.model.ancestor.NombreCompleto;
-import com.mindefdb.dominio.model.auditable.DataAuditable;
+import com.mindefdb.dominio.ancestors.IModelEntity;
+import com.mindefdb.dominio.auditable.DataAuditable;
+import com.mindefdb.dominio.embedables.Address;
+import com.mindefdb.dominio.embedables.FlagEstado;
+import com.mindefdb.dominio.embedables.NombreCompleto;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embedded;
@@ -28,7 +29,7 @@ import lombok.Data;
         @UniqueConstraint(name = "UK_T_T_CHOFER_DNI", columnNames = "dni"),
         @UniqueConstraint(name = "UK_T_T_CHOFER_NRO_LICENCIA", columnNames = "nro_licencia"),
 	})
-public class Chofer extends DataAuditable implements Serializable{
+public class Chofer extends DataAuditable implements Serializable, IModelEntity{
 	/**
 	 * 
 	 */

@@ -1,4 +1,4 @@
-package com.mindefdb.dtos;
+package com.mindefdb.dtos.examples;
 
 import lombok.Data;
 

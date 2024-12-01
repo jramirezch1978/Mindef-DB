@@ -4,8 +4,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mindefdb.dtos.RequestDTO;
-import com.mindefdb.dtos.ResponseDTO;
+import com.mindefdb.dtos.examples.RequestDTO;
+import com.mindefdb.dtos.examples.ResponseDTO;
 
 @RestController
 public class Level0Controller {
