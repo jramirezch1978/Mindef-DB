@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mindefdb.services.transactionals.Exceptiones.PaymentException;
+
 @Service
 @Transactional
 public class OrderServiceV2 {
@@ -14,7 +16,7 @@ public class OrderServiceV2 {
     @Autowired
     private PaymentService paymentService;
     
-    public Order processOrder(Order order) {
+    public Order processOrder(Order order) throws PaymentException {
         // Todo esto es una sola transacción
         validateOrder(order);
         
