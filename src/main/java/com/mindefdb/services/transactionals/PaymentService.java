@@ -5,11 +5,13 @@ import java.util.Date;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.mindefdb.services.transactionals.Exceptiones.PaymentException;
+
 @Service
 public class PaymentService {
 
 	@Transactional(timeout = 20)
-	public void processPayment(Float payment) {
+	public void processPayment(Float payment) throws PaymentException{
 		Date fechaHoraInicio = new Date();
 		
 		//Todo el proceso

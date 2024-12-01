@@ -1,6 +1,7 @@
 package com.mindefdb.services.transactionals;
 
 import java.util.Date;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import lombok.Data;
@@ -13,5 +14,7 @@ public class Order {
 	private String codMoneda;
 	private Date fecCompra;
 	private Float payment;
+	
+	private List<OrderDetail> items;
 	
 }
