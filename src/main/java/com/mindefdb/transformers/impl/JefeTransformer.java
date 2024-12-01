@@ -1,15 +1,14 @@
 package com.mindefdb.transformers.impl;
 
 import com.mindefdb.dominio.ancestors.IModelEntity;
-import com.mindefdb.dominio.model.Cargo;
-import com.mindefdb.dominio.model.Jefe;
-import com.mindefdb.dominio.embedables.NombreCompleto;
 import com.mindefdb.dominio.embedables.Address;
 import com.mindefdb.dominio.embedables.FlagEstado;
-import com.mindefdb.dtos.ancestors.AncestorDTO;
-import com.mindefdb.dtos.CargoDTO;
+import com.mindefdb.dominio.embedables.NombreCompleto;
+import com.mindefdb.dominio.model.Jefe;
 import com.mindefdb.dtos.JefeDTO;
+import com.mindefdb.dtos.ancestors.AncestorDTO;
 import com.mindefdb.transformers.ITransformer;
+
 import lombok.Builder;
 
 @Builder
