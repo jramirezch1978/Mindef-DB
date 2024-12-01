@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.mindefdb.services.transactionals.Exceptiones.AccountNotFoundException;
 import com.mindefdb.services.transactionals.Exceptiones.InsufficientFundsException;
+import com.mindefdb.services.transactionals.entities.Account;
 
 @Service
 public class TransferService {

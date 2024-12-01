@@ -10,6 +10,7 @@ import com.mindefdb.services.transactionals.Exceptiones.NotificationException;
 import com.mindefdb.services.transactionals.Exceptiones.OrderProcessingException;
 import com.mindefdb.services.transactionals.Exceptiones.PaymentException;
 import com.mindefdb.services.transactionals.Exceptiones.StockException;
+import com.mindefdb.services.transactionals.entities.Order;
 
 @Service
 @Transactional

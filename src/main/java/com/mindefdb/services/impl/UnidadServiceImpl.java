@@ -22,14 +22,14 @@ public class UnidadServiceImpl implements IUnidadService{
 	@Override
 	public UnidadDTO insertar(UnidadDTO unidadDto) {
 		
-		Unidad unidad = UnidadTransformer.parserDtoToModel(unidadDto);
+		Unidad unidad = (Unidad) UnidadTransformer.builder().build().parserDtoToModel(unidadDto);
 		
 		unidad.setCreadoPor("SYSTEM");
 		unidad.setFechaCreacion(LocalDateTime.now());
 		
 		unidadRepository.save(unidad);
 		
-		UnidadDTO dtoRetorno = UnidadTransformer.parserModelToDto(unidad);
+		UnidadDTO dtoRetorno = (UnidadDTO) UnidadTransformer.builder().build().parserModelToDto(unidad);
 		
 		return dtoRetorno;
 	}
@@ -37,23 +37,24 @@ public class UnidadServiceImpl implements IUnidadService{
 	@Override
 	public UnidadDTO update(UnidadDTO unidadDto) {
 		
-		Unidad unidad = UnidadTransformer.parserDtoToModel(unidadDto);
+		Unidad unidad = (Unidad) UnidadTransformer.builder().build().parserDtoToModel(unidadDto);
 		
 		unidad.setModificadoPor("SYSTEM");
 		unidad.setFechaModificacion(LocalDateTime.now());
 		
 		unidadRepository.save(unidad);
 		
-		UnidadDTO dtoRetorno = UnidadTransformer.parserModelToDto(unidad);
+		UnidadDTO dtoRetorno = (UnidadDTO) UnidadTransformer.builder().build().parserModelToDto(unidad);
 		
 		return dtoRetorno;
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<UnidadDTO> getAll() {
 		List<Unidad> lista = unidadRepository.findAll();
 		
-		List<UnidadDTO> listaRetorno = UnidadTransformer.parserModelToDTO(lista);
+		List<UnidadDTO> listaRetorno = UnidadTransformer.builder().build().parserModelToDTO(lista);
 		
 		return listaRetorno;
 	}
@@ -72,7 +73,7 @@ public class UnidadServiceImpl implements IUnidadService{
 		if (optUnidad.isEmpty())
 			throw new Exception ("No existe la unidad con codigo " + idCodUnidad.toString());
 		
-		UnidadDTO unidadDto = UnidadTransformer.parserModelToDto(optUnidad.get());
+		UnidadDTO unidadDto = (UnidadDTO) UnidadTransformer.builder().build().parserModelToDto(optUnidad.get());
 		
 		return unidadDto;
 	}

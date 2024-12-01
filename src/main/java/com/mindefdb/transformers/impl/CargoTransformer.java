@@ -7,7 +7,10 @@ import com.mindefdb.dtos.CargoDTO;
 import com.mindefdb.dtos.ancestors.AncestorDTO;
 import com.mindefdb.transformers.ITransformer;
 
-public class CargoTransformer implements ITransformer{
+import lombok.Builder;
+
+@Builder
+public class CargoTransformer implements ITransformer<Cargo, CargoDTO>{
 
 	@Override
 	public IModelEntity parserDtoToModel(AncestorDTO dto) {
