@@ -21,7 +21,7 @@ public class OrderService {
     
     // Configuración específica
     @Transactional(readOnly = true)
-    public Order findById(String nroCompra) throws ResourceNotFoundException {
+    public Order findById(Long nroCompra) throws ResourceNotFoundException {
         return orderRepository.findById(nroCompra)
             .orElseThrow(() -> new ResourceNotFoundException("Order not found"));
     }

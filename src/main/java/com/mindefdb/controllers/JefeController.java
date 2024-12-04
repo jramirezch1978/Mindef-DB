@@ -33,7 +33,7 @@ public class JefeController {
     
     private Logger log = LoggerFactory.getLogger(JefeController.class.getName());
     
-    @PostMapping("/insertar")
+    @PostMapping("/")
     public ResponseEntity<?> insertar(@Valid @RequestBody JefeDTO jefeDTO) {
         log.debug("JefeController.insertar() ==================> INICIO <==================");
         try {
@@ -47,7 +47,7 @@ public class JefeController {
         }
     }
     
-    @DeleteMapping("/eliminar/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable("id") Long idJefe) {
         log.debug("JefeController.eliminar() ==================> INICIO <==================");
         try {
@@ -138,7 +138,7 @@ public class JefeController {
         }
     }
     
-    @PostMapping("/update")
+    @PutMapping("/")
     public ResponseEntity<?> update(@RequestBody JefeDTO jefeDTO) {
         log.debug("JefeController.update() ==================> INICIO <==================");
         try {

@@ -22,7 +22,10 @@ public class CargoTransformer implements ITransformer<Cargo, CargoDTO>{
 		}
 		
 		cargo.setNombreCargo(cargoDto.getNombreCargo());
-		cargo.setFlagEstado(FlagEstado.builder().flagEstado("1").build());
+		cargo.setFlagEstado(FlagEstado
+								.builder()
+								.flagEstado(cargoDto.getFlagEstado())
+								.build());
 		
 		return cargo;
 	}

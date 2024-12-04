@@ -26,7 +26,7 @@ public class CargoController {
     
     private Logger log = LoggerFactory.getLogger(CargoController.class.getName());
     
-    @PostMapping("/insertar")
+    @PostMapping("/")
     public ResponseEntity<?> insertar(@Valid @RequestBody CargoDTO cargoDTO) {
         log.debug("CargoController.insertar() ==================> INICIO <==================");
         try {
@@ -40,7 +40,7 @@ public class CargoController {
         }
     }
     
-    @DeleteMapping("/eliminar/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<?> eliminar(@PathVariable("id") Long idCodCargo) {
         log.debug("CargoController.eliminar() ==================> INICIO <==================");
         try {
@@ -129,7 +129,7 @@ public class CargoController {
         }
     }
     
-    @PostMapping("/update")
+    @PutMapping("/")
     public ResponseEntity<?> update(@RequestBody CargoDTO cargoDTO) {
         log.debug("CargoController.update() ==================> INICIO <==================");
         try {
