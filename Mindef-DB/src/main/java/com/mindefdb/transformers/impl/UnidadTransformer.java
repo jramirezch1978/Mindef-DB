@@ -9,7 +9,7 @@ import com.mindefdb.transformers.ITransformer;
 import lombok.Builder;
 
 @Builder
-public class UnidadTransformer implements ITransformer{
+public class UnidadTransformer implements ITransformer<Unidad, UnidadDTO>{
 
 	@Override
 	public IModelEntity parserDtoToModel(AncestorDTO dto) {
@@ -17,10 +17,7 @@ public class UnidadTransformer implements ITransformer{
 		Unidad unidad = new Unidad();
 		UnidadDTO unidadDto = (UnidadDTO) dto;
 		
-		if(unidadDto.getIdCodUnidad() != null) {
-			unidad.setIdCodUnidad(unidadDto.getIdCodUnidad());
-		}
-		
+		unidad.setIdCodUnidad(unidadDto.getIdCodUnidad());
 		unidad.setNombre(unidadDto.getNombre());
 		unidad.setSigla(unidadDto.getSigla());
 		unidad.setFlagEstado("1");

@@ -9,6 +9,6 @@ import com.mindefdb.dominio.model.Unidad;
 
 @Repository
 public interface IUnidadRepository extends JpaRepository<Unidad, Long> {
-
+	
 	List<Unidad> findAllByOrderByIdCodUnidadAsc();
 }
